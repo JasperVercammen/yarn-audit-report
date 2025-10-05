@@ -1,6 +1,6 @@
 {
 	"name": "yarn-audit-report",
-	"version": "7.3.2",
+	"version": "1.0.0",
 	"description": "Generate a HTML/PDF report for Yarn Audit",
 	"type": "module",
 	"license": "MIT",
@@ -72,20 +72,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/davityavryan/yarn-audit-report.git"
+		"url": "https://github.com/JasperVercammen/yarn-audit-report"
 	},
 	"bugs": {
-		"url": "https://github.com/davityavryan/yarn-audit-report/issues"
+		"url": "https://github.com/JasperVercammen/yarn-audit-report/issues"
 	},
-	"funding": [
-		{
-			"type": "PayPal",
-			"url": "https://paypal.me/davityavryan?country.x=DE&locale.x=en_US"
-		},
-		{
-			"type": "Buy Me A Coffee",
-			"url": "https://www.buymeacoffee.com/davityavryan"
-		}
-	],
 	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
