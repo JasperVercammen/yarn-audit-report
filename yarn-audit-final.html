@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@5.2/dist/materia/bootstrap.min.css"
+            crossorigin="anonymous"
+        />
+
+        <title>Yarn Audit Report</title>
+        <meta name="description" content="14 overall vulnerabilities found." />
+
+        <style>
+            label {
+                position: relative;
+
+                display: block;
+                padding-left: 30px;
+                margin-left: -10px;
+
+                cursor: pointer;
+            }
+
+            label:before {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+
+                width: 0;
+                height: 0;
+
+                border-left: 8px solid currentColor;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                margin-top: -8px;
+
+                content: '';
+            }
+
+            .card-text p:last-child {
+                margin-bottom: 0;
+            }
+
+            /* PDF-specific styles */
+            @media print {
+                .card {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                }
+                
+                code {
+                    word-break: break-all;
+                    font-size: 0.8em;
+                }
+                
+                .badge {
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+            }
+
+            input[type='checkbox'] {
+                display: none;
+            }
+
+            input[type='checkbox']:checked + h3 label:before {
+                border-left: 8px solid transparent;
+                border-top: 8px solid black;
+                border-right: 8px solid transparent;
+
+                margin-left: -4px;
+                margin-top: -4px;
+            }
+
+            .collapsible-wrapper {
+                max-height: 0;
+                padding: 0;
+                padding-left: 30px;
+                overflow-y: auto;
+
+                transition: max-height 0.15s ease;
+            }
+
+            input[type='checkbox']:checked + h3 + .collapsible-wrapper {
+                max-height: 500px;
+                padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+            }
+
+            h1,
+            .h1 {
+                font-size: calc(2.03125rem * 20 / 16);
+            }
+            h2,
+            .h2 {
+                font-size: calc(1.625rem * 20 / 16);
+            }
+            h3,
+            .h3 {
+                font-size: calc(1.421875rem * 20 / 16);
+            }
+            h4,
+            .h4 {
+                font-size: calc(1.21875rem * 20 / 16);
+            }
+            h5,
+            .h5 {
+                font-size: calc(1.015625rem * 20 / 16);
+            }
+            h6,
+            .h6 {
+                font-size: calc(0.8125rem * 20 / 16);
+            }
+            @media (min-width: 1200px) {
+                h1,
+                .h1 {
+                    font-size: calc(2.03125rem * 20 / 16);
+                }
+                h2,
+                .h2 {
+                    font-size: calc(1.625rem * 20 / 16);
+                }
+                h3,
+                .h3 {
+                    font-size: calc(1.421875rem * 20 / 16);
+                }
+                h4,
+                .h4 {
+                    font-size: calc(1.21875rem * 20 / 16);
+                }
+                h5,
+                .h5 {
+                    font-size: calc(1.015625rem * 20 / 16);
+                }
+                h6,
+                .h6 {
+                    font-size: calc(0.8125rem * 20 / 16);
+                }
+            }
+            .alert,
+            .alert .h1,
+            .alert .h2,
+            .alert .h3,
+            .alert .h4,
+            .alert .h5,
+            .alert .h6,
+            .alert h1,
+            .alert h2,
+            .alert h3,
+            .alert h4,
+            .alert h5,
+            .alert h6 {
+                color: var(--bs-body-color);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row my-3">
+                <div class="col-md text-center">
+                    <h1 class="h2">Yarn Audit Report</h1>
+
+                    <h3 class="h5">
+                        14 unique from 14 overall vulnerabilities
+                    </h3>
+                    
+                    <!-- Severity Overview -->
+                    <div class="row mt-4 mb-4">
+                        <div class="col-12">
+                            <h4 class="h6 mb-3">Vulnerability Breakdown by Severity</h4>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                
+                                
+                                <span class="badge bg-warning fs-6 px-3 py-2">
+                                    High: 1
+                                </span>
+                                
+                                
+                                <span class="badge bg-info fs-6 px-3 py-2">
+                                    Moderate: 13
+                                </span>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-warning">
+                                    high
+                                </span>
+                                axios - Axios is vulnerable to DoS attack through lack of data size check
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/axios"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                axios
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 1.9.0</li>
+                                        
+                                        <li>Vulnerable: &gt;=1.0.0 &lt;1.12.0</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>Axios is vulnerable to DoS attack through lack of data size check</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-0" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-0"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">minze-therapy@workspace:.</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                                <a
+                                    href="https://github.com/advisories/GHSA-4hjh-wcwx-xvwj"
+                                    class="btn btn-md btn-primary"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    More about this vulnerability
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-async-generator-functions - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-async-generator-functions"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-async-generator-functions
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.20.7</li>
+                                        
+                                        <li>Vulnerable: 7.20.7</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-1" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-1"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-class-properties - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-class-properties"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-class-properties
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.18.6</li>
+                                        
+                                        <li>Vulnerable: 7.18.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-2" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-2"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-logical-assignment-operators - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-logical-assignment-operators"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-logical-assignment-operators
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.20.7</li>
+                                        
+                                        <li>Vulnerable: 7.20.7</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-3" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-3"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-nullish-coalescing-operator - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-nullish-coalescing-operator"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-nullish-coalescing-operator
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.18.6</li>
+                                        
+                                        <li>Vulnerable: 7.18.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-4" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-4"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-numeric-separator - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-numeric-separator"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-numeric-separator
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.18.6</li>
+                                        
+                                        <li>Vulnerable: 7.18.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-5" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-5"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-object-rest-spread - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-object-rest-spread"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-object-rest-spread
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.20.7</li>
+                                        
+                                        <li>Vulnerable: 7.20.7</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-6" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-6"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-optional-catch-binding - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-optional-catch-binding"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-optional-catch-binding
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.18.6</li>
+                                        
+                                        <li>Vulnerable: 7.18.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-7" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-7"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @babel/plugin-proposal-optional-chaining - This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@babel/plugin-proposal-optional-chaining"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @babel/plugin-proposal-optional-chaining
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.21.0</li>
+                                        
+                                        <li>Vulnerable: 7.21.0</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-8" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-8"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@react-native/babel-preset@virtual:fa1aaada1e83d92484e50c1705d8cad4ea9edeba2d201f71711bf6e589c6f4be4661cfb82eaca366a77cf172749451baa7caa9fce6fcf57ff489b0bad358e308#npm:0.74.87</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                @xmldom/xmldom - this version is no longer supported, please update to at least 0.8.*
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/@xmldom/xmldom"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                @xmldom/xmldom
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 0.7.13</li>
+                                        
+                                        <li>Vulnerable: 0.7.13</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>this version is no longer supported, please update to at least 0.8.*</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-9" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-9"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@expo/plist@npm:0.1.3</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                glob - Glob versions prior to v9 are no longer supported
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/glob"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                glob
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 7.1.6</li>
+                                        
+                                        <li>Vulnerable: 7.1.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>Glob versions prior to v9 are no longer supported</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-10" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-10"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">@expo/config-plugins@npm:8.0.11</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                inflight - This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/inflight"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                inflight
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 1.0.6</li>
+                                        
+                                        <li>Vulnerable: 1.0.6</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-11" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-11"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">glob@npm:7.2.3</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                osenv - This package is no longer supported.
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/osenv"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                osenv
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 0.1.5</li>
+                                        
+                                        <li>Vulnerable: 0.1.5</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>This package is no longer supported.</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-12" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-12"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">npm-package-arg@npm:7.0.0</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body p-4">
+                            <h1 class="card-title h3 d-flex align-items-center gap-2">
+                                <span class="badge text-capitalize bg-info">
+                                    moderate
+                                </span>
+                                rimraf - Rimraf versions prior to v4 are no longer supported
+                            </h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            Module:
+                                            <a
+                                                href="https://npmjs.com/package/rimraf"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                rimraf
+                                            </a>
+                                        </li>
+                                        
+                                        <li>Installed version: 2.6.3</li>
+                                        
+                                        <li>Vulnerable: 2.6.3</li>
+                                        <li>Patched: Update to a version outside the vulnerable range</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>Overview</h3>
+                            <div class="card-text mb-3">
+                                <p>Rimraf versions prior to v4 are no longer supported</p>
+
+                            </div>
+
+                            
+                            
+                            <!-- Collapsible for HTML -->
+                            <input id="vulnerability-reasons-13" type="checkbox" />
+                            <h3>
+                                <label for="vulnerability-reasons-13"
+                                    >Reasons this module exists</label
+                                >
+                            </h3>
+                            <div class="card-text alert alert-secondary collapsible-wrapper">
+                                
+                                <div class="card-text">
+                                    <code class="text-body">temp@npm:0.8.4</code>
+                                </div>
+                                
+                            </div>
+                            
+                            
+
+                            <div class="d-flex justify-content-end">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+
+                <h6 class="col-md-12 mb-3 pb=3 text-end">Report generated at October 5, 2025 at 10:49:18 AM GMT+2</h6>
+            </div>
+        </div>
+    </body>
+</html>
