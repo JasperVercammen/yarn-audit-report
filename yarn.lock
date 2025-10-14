@@ -1091,19 +1091,19 @@ nise@^5.1.4:
     path-to-regexp "^1.7.0"
 
 node-test-github-reporter@^1.1.3:
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/node-test-github-reporter/-/node-test-github-reporter-1.1.6.tgz"
-  integrity sha512-+feaok0iOjzTbmkLZXIQWTFZXItuewH+uI311ZSDoSAa/a30DfchJg1alfksqX4A7eQG+K0XpzCowH/5ssFmng==
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/node-test-github-reporter/-/node-test-github-reporter-1.3.1.tgz#23ed1b118cb9ee334c05e55312c838a471b41ebf"
+  integrity sha512-SHWaJmTClc1DAEu0UFvjvw2AK2pOhoos2YDifTc59VhbUI7Ro0j4xlqZtqMVuGd/s9gMrQspkhwHCMFDjk+0cg==
   dependencies:
     "@actions/core" "^1.10.0"
     error-stack-parser "^2.1.4"
-    node-test-parser "^2.2.1"
+    node-test-parser "^3.0.0"
     stack-utils "^2.0.6"
 
-node-test-parser@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/node-test-parser/-/node-test-parser-2.2.1.tgz"
-  integrity sha512-RCwq0a1xsWO0e8roIh6sFKzeyA8Vq8PgvuQs19KoKxaBK++vf3GUa2SrzD9ialMFvtFEzY2C5BJkQ+HyzuhmDg==
+node-test-parser@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/node-test-parser/-/node-test-parser-3.1.0.tgz#9e427fc8a0c3a92700f583e00a2397b9d107c7de"
+  integrity sha512-e9CLgS/wOMVlpWI63U27wxv8Lq0jMiO2JWirhRKflLsUMHWVoh/ruEibsw1YDCgOwHZiSyNW/QXNTo9cuB7Qpw==
 
 npm-run-path@^5.1.0:
   version "5.1.0"
